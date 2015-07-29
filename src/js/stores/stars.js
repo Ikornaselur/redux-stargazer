@@ -13,8 +13,8 @@ module.exports = function stars(state, action) {
     case types.SEARCH_FOR_USER:
       return {
         pending: true,
-        errors: state.errors,
-        repos: state.repos
+        errors: false,
+        repos: [] 
       }
 
     case types.SEARCH_SUCCESS:
@@ -24,7 +24,12 @@ module.exports = function stars(state, action) {
         repos: action.repos
       }
 
-      //case types.SEARCH_ERROR:
+    case types.SEARCH_ERROR:
+      return {
+        pending: false,
+        errors: true,
+        repos: state.repos
+      }
 
       //case types.CLEAR_LIST:
 

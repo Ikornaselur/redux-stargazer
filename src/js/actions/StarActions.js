@@ -19,10 +19,15 @@ function searchForUser(username) {
     });
     fetch(githubUrl(username))
       .then(function (response) {
-        response.json().then(function (data) {
-          dispatch(searchSuccess(data));
-          // TODO Error handling
-        });
+        if (response.ok) {
+          response.json().then(function (data) {
+            dispatch(searchSuccess(data));
+            // TODO Error handling
+          });
+        }
+        else {
+          dispatch(searchError());
+        }
       });
   }
 }

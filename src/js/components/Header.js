@@ -4,7 +4,8 @@ var UserTextInput = require('./UserTextInput');
 
 var Header = React.createClass({
   propTypes: {
-    searchForUser: PropTypes.func.isRequired
+    searchForUser: PropTypes.func.isRequired,
+    pending: PropTypes.bool
   },
 
   handleSearch: function (query) {
@@ -18,7 +19,9 @@ var Header = React.createClass({
       <header className='header'>
         <h1>Stargazer</h1>
         <UserTextInput onSave={this.handleSearch}
-                       placeholder='Search for user name?' />
+                       placeholder='Search for user name?'
+                       pending={this.props.pending}
+        />
       </header>
     );
   }

@@ -26,6 +26,7 @@ var UserTextInput = React.createClass({
   },
 
   render: function() {
+    var disabled = this.props.pending && 'disabled' || '';
     return (
       <input type='text'
              className='form-control'
@@ -33,7 +34,8 @@ var UserTextInput = React.createClass({
              autoFocus='true'
              value={this.state.text}
              onChange={this.handleChange}
-             onKeyDown={this.handleSubmit} />
+             onKeyDown={this.handleSubmit}
+             disabled={disabled} />
     );
   }
 });
