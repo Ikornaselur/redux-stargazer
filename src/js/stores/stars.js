@@ -1,16 +1,35 @@
 var assign = require('object-assign');
 var types = require('../constants/ActionTypes');
 
-var initialState = [{
-  text: 'Use Redux',
-  marked: false,
-  id: 0
-}];
+var initialState = {
+  pending: false,
+  errors: null,
+  repos: []
+};
 
 module.exports = function stars(state, action) {
   state = state || initialState
   switch (action.type) {
-  default:
-    return state;
+    case types.SEARCH_FOR_USER:
+      return {
+        pending: true,
+        errors: state.errors,
+        repos: state.repos
+      }
+
+    case types.SEARCH_SUCCESS:
+      return {
+        pending: false,
+        errors: state.errors,
+        repos: action.repos
+      }
+
+      //case types.SEARCH_ERROR:
+
+      //case types.CLEAR_LIST:
+
+
+    default:
+      return state;
   }
 }

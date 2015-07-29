@@ -9,7 +9,7 @@ var Header = React.createClass({
 
   handleSearch: function (query) {
     if (query.length !== 0) {
-      console.log('Searching for user: ' + query);
+      this.props.searchForUser(query);
     }
   },
 

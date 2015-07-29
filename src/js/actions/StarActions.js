@@ -1,26 +1,47 @@
 var types = require('../constants/ActionTypes');
 
-module.exports.searchForUser = function searchForUser(username) {
+function githubUrl(username) {
+  return 'https://api.github.com/users/' + username + '/starred';
+}
+
+function searchSuccess(repos) {
   return {
-    type: types.SEARCH_PENDING,
-    username: username
+    type: types.SEARCH_SUCCESS,
+    repos: repos
   };
 }
 
-module.exports.searchSuccess = function searchSuccess() {
-  return {
-    type: types.SEARCH_SUCCESS
-  };
+function searchForUser(username) {
+  return function (dispatch) {
+    dispatch({
+      type: types.SEARCH_FOR_USER,
+      username: username
+    });
+    fetch(githubUrl(username))
+      .then(function (response) {
+        response.json().then(function (data) {
+          dispatch(searchSuccess(data));
+          // TODO Error handling
+        });
+      });
+  }
 }
 
-module.exports.searchError = function searchError() {
+function searchError() {
   return {
     type: types.SEARCH_ERROR
   };
 }
 
-module.exports.clearList = function clearList() {
+function clearList() {
   return {
     type: types.CLEAR_LIST
   };
+}
+
+module.exports = {
+  searchSuccess: searchSuccess,
+  searchForUser: searchForUser,
+  searchError: searchError,
+  clearList: clearList
 }
