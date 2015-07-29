@@ -21,7 +21,7 @@ var StargazerApp = React.createClass({
   renderChild: function (state) {
     var actions = bindActionCreators(StarActions, state.dispatch);
     return (
-      <div>
+      <div className="row">
         <Header pending={state.stars.pending} searchForUser={actions.searchForUser} />
         <RepoList errors={state.stars.errors} repos={state.stars.repos} />
       </div>

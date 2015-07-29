@@ -16,8 +16,8 @@ var Header = React.createClass({
 
   render: function () {
     return (
-      <header className='header'>
-        <h1>Stargazer</h1>
+      <header className='header row'>
+        <h1>Github stargazers</h1>
         <UserTextInput onSave={this.handleSearch}
                        placeholder='Search for user name?'
                        pending={this.props.pending}

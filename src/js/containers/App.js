@@ -6,10 +6,10 @@ var applyMiddleware = require('redux').applyMiddleware;
 var thunk = require('redux-thunk');
 
 var StargazerApp = require('./StargazerApp');
-var stores = require('../stores');
+var reducers = require('../reducers');
 
 
-var reducer = combineReducers(stores);
+var reducer = combineReducers(reducers);
 var createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 var store = createStoreWithMiddleware(reducer);
 
