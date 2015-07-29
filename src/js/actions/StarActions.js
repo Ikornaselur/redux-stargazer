@@ -20,15 +20,17 @@ function searchForUser(username) {
     fetch(githubUrl(username))
       .then(function (response) {
         if (response.ok) {
-          response.json().then(function (data) {
-            dispatch(searchSuccess(data));
-            // TODO Error handling
-          });
+          return reponse.json();
         }
         else {
           dispatch(searchError());
         }
+      }).then(function (data) {
+        // Response was okay, handle it
+        dispatch(searchSuccess(data));
+        // TODO Error handling
       });
+;
   };
 }
 
