@@ -10,7 +10,7 @@ var StargazerApp = React.createClass({
   render: function() {
     var select = function (state) {
       return {stars: state.stars};
-    }
+    };
     return (
       <Connector select={select}>
         {this.renderChild}

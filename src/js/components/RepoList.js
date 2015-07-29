@@ -12,7 +12,7 @@ var RepoList = React.createClass({
         <div className='alert alert-danger row'>
           Something went wrong. Does the user name actually exist on github?
         </div>
-      )
+      );
     }
     var repos = this.props.repos.map(function (repo) {
       return <RepoItem key={repo.id} repo={repo} />;
@@ -22,7 +22,7 @@ var RepoList = React.createClass({
       <div className='row'>
         {repos}
       </div>
-    )
+    );
   }
 });
 

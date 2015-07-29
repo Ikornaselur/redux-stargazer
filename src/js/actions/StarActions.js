@@ -29,7 +29,7 @@ function searchForUser(username) {
           dispatch(searchError());
         }
       });
-  }
+  };
 }
 
 function searchError() {
@@ -49,4 +49,4 @@ module.exports = {
   searchForUser: searchForUser,
   searchError: searchError,
   clearList: clearList
-}
+};

@@ -17,8 +17,8 @@ var RepoItem = React.createClass({
           {repo.description}
         </div>
       </div>
-    )
+    );
   }
 });
 
-module.exports = RepoItem
+module.exports = RepoItem;
