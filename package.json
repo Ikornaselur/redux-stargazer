@@ -1,12 +1,12 @@
 {
-  "name": "lemonade-stargazer",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "name": "redux-stargazer",
+  "version": "0.1.0",
+  "description": "A simple github stargazer lookup written with React/Redux",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ws -d ./dist/"
   },
-  "author": "",
+  "author": "Axel Orn Sigurdsson",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -15,6 +15,7 @@
     "gulp-jshint": "^1.11.2",
     "gulp-plumber": "^1.0.1",
     "gulp-react": "^3.0.1",
+    "local-web-server": "^0.5.20",
     "object-assign": "^3.0.0",
     "react": "^0.13.3",
     "react-redux": "^0.2.2",
