@@ -20,7 +20,6 @@
     "gulp-plumber": "^1.0.1",
     "gulp-react": "^3.0.1",
     "local-web-server": "^0.5.20",
-    "object-assign": "^3.0.0",
     "react": "^0.13.3",
     "react-redux": "^0.2.2",
     "reactify": "^1.1.1",

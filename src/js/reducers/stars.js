@@ -1,4 +1,3 @@
-var assign = require('object-assign');
 var types = require('../constants/ActionTypes');
 
 var initialState = {
