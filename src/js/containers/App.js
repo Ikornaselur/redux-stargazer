@@ -1,16 +1,17 @@
 var React = require('react');
 var StargazerApp = require('./StargazerApp');
 var createStore = require('redux').createStore;
+var combineReducers = require('redux').combineReducers;
 var Provider = require('react-redux').Provider;
 var stores = require('../stores');
 
-console.log(stores);
-var redux = createStore(stores.stars);
+var reducer = combineReducers(stores);
+var store = createStore(reducer);
 
 var App = React.createClass({
   render: function() {
     return (
-      <Provider redux={redux}>
+      <Provider store={store}>
         {function() { return <StargazerApp />; }}
       </Provider>
     );
