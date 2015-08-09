@@ -2,7 +2,7 @@ var types = require('../constants/ActionTypes');
 
 var initialState = {
   pending: false,
-  errors: null,
+  error: null,
   repos: []
 };
 
@@ -12,21 +12,21 @@ module.exports = function stars(state, action) {
     case types.SEARCH_FOR_USER:
       return {
         pending: true,
-        errors: false,
+        error: null,
         repos: [] 
       };
 
     case types.SEARCH_SUCCESS:
       return {
         pending: false,
-        errors: state.errors,
+        error: state.error,
         repos: action.repos
       };
 
     case types.SEARCH_ERROR:
       return {
         pending: false,
-        errors: true,
+        error: action.message,
         repos: state.repos
       };
 

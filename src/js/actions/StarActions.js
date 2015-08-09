@@ -29,14 +29,16 @@ function searchForUser(username) {
         // Response was okay, handle it
         dispatch(searchSuccess(data));
         // TODO Error handling
+      }).catch(function (error) {
+        dispatch(searchError(error.message));
       });
-;
   };
 }
 
-function searchError() {
+function searchError(message) {
   return {
-    type: types.SEARCH_ERROR
+    type: types.SEARCH_ERROR,
+    message: message
   };
 }
 

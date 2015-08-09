@@ -4,13 +4,13 @@ var RepoItem = require('./RepoItem');
 var RepoList = React.createClass({
   propTypes: { 
     repos: React.PropTypes.array.isRequired,
-    errors: React.PropTypes.bool
+    error: React.PropTypes.string
   },
   render: function () {
-    if (this.props.errors) {
+    if (this.props.error) {
       return (
         <div className='alert alert-danger row'>
-          Something went wrong. Does the user name actually exist on github?
+          An error has occured: {this.props.error}
         </div>
       );
     }

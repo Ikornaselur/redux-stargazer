@@ -23,7 +23,7 @@ var StargazerApp = React.createClass({
     return (
       <div className="row">
         <Header pending={state.stars.pending} searchForUser={actions.searchForUser} />
-        <RepoList errors={state.stars.errors} repos={state.stars.repos} />
+        <RepoList error={state.stars.error} repos={state.stars.repos} />
       </div>
     );
   }
