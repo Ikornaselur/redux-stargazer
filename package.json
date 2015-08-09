@@ -25,5 +25,8 @@
     "reactify": "^1.1.1",
     "redux": "^1.0.0-rc",
     "redux-thunk": "^0.1.0"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^0.9.0"
   }
 }

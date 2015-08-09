@@ -1,4 +1,6 @@
 var types = require('../constants/ActionTypes');
+// Polyfill fetch for other browser
+require('whatwg-fetch');
 
 function githubUrl(username) {
   return 'https://api.github.com/users/' + username + '/starred';
