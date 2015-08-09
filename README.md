@@ -7,4 +7,4 @@ Depends on npm to be installed.
 
 1. `npm install` to install all dependencies
 2. `gulp` to run the default task, compiling the react jsx files
-3. `npm start` to serve on port 3000
+3. `npm start` to serve on port 8000
