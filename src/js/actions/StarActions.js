@@ -20,7 +20,7 @@ function searchForUser(username) {
     fetch(githubUrl(username))
       .then(function (response) {
         if (response.ok) {
-          return reponse.json();
+          return response.json();
         }
         else {
           dispatch(searchError());
